@@ -1,7 +1,0 @@
-from openai import OpenAI
-import requests
-
-openai = OpenAI()
-messages = [{"role":"system","content":"you are a helpful worker"},{"role":"user","content":"what is the capital of France?"}]
-response = openai.chat.completions.create(model="gpt-5-nano",messages=messages)
-response.choices[0].message.content
