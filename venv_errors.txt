@@ -1,0 +1,51 @@
+Error 1 : 
+PS C:\Users\Lenovo\repos\AgenticAI\.venv\Scripts> .\activate
+.\activate : File C:\Users\Lenovo\repos\AgenticAI\.venv\Scripts\Activate.ps1 cannot be loaded because running scripts
+is disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ .\activate
++ ~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+
+Solution 1: Change Execution Policy (Recommended)
+
+Open PowerShell as Administrator.
+
+Run the following command:
+
+Set-ExecutionPolicy RemoteSigned
+
+Press Y and then Enter.
+
+Now activate the virtual environment:
+
+.\.venv\Scripts\Activate.ps1
+Solution 2: Temporary Fix (Only for Current Session)
+
+This option changes the execution policy only for the current PowerShell window.
+
+Run:
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Then activate the environment:
+
+.\.venv\Scripts\Activate.ps1
+Solution 3: Use Command Prompt Instead of PowerShell
+
+Open Command Prompt (cmd) and run:
+
+.venv\Scripts\activate
+
+This works without changing any security settings.
+
+Note
+
+If your virtual environment folder is named .venv, make sure to include it in the activation command:
+
+.\.venv\Scripts\Activate.ps1
+
+If you want, Twi, I can also give you a complete Python project setup guide (venv + requirements.txt + folder structure) that developers use for projects.
